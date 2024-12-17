@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 
-const emailTemplate = (imei: any, user: any) => `
+const emailTemplate = (imei: string, user: string) => `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -203,14 +203,14 @@ export async function POST(req: Request) {
       JSON.stringify({ success: true, message: "Email sent successfully!" }),
       { status: 200 }
     );
-  } catch (error: any) {
+  } catch (error) {
     console.error("Email sending error:", error);
 
     return new Response(
       JSON.stringify({
         success: false,
         message: "Failed to send email.",
-        error: error.message,
+        error: error,
       }),
       { status: 500 }
     );

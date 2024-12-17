@@ -16,7 +16,7 @@ const CardAbout = ({ logo, title, content }: CardProps) => {
         <div className="font-bold">{title}</div>
       </div>
       <div className="flex flex-col items-center justify-center">
-        {content.map((item: any, index: any) => (
+        {content.map((item: string, index: number) => (
           <div key={index}>{item}</div>
         ))}
       </div>

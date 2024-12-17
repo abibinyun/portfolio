@@ -5,9 +5,9 @@ const SendEmailPage = () => {
   const [recipientEmail, setRecipientEmail] = useState<string>("");
   const [imei, setImei] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [responseMessage, setResponseMessage] = useState<any>(null);
+  const [responseMessage, setResponseMessage] = useState<string>("");
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
 
@@ -31,8 +31,8 @@ const SendEmailPage = () => {
       } else {
         setResponseMessage("Failed to send email: " + data.message);
       }
-    } catch (error: any) {
-      setResponseMessage("Error sending email: " + error.message);
+    } catch (error) {
+      setResponseMessage("Error sending email: " + error);
     } finally {
       setIsLoading(false);
     }

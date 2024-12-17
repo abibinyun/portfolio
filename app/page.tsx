@@ -24,9 +24,9 @@ interface ClickArrowProps {
 
 const ClickArrow = ({ target }: ClickArrowProps) => {
   return (
-    <a href={`/#${target}`} className="absolute -bottom-3 right-8 w-8 h-8 flex items-center justify-center">
+    <Link href={`/#${target}`} className="absolute -bottom-3 right-8 w-8 h-8 flex items-center justify-center">
       <Image src={Arrow} alt="Arrow navigation button" className="w-8 h-8 object-contain" priority />
-    </a>
+    </Link>
   );
 };
 
@@ -43,7 +43,7 @@ const Home = () => {
           <Image src={ProfileImg} width={500} height={500} alt="photo-profile" className="w-full h-full object-cover rounded-full" />
         </div>
         <div className="text-center">
-          <p>Hello, I'm</p>
+          <p>Hello, I&apos;m</p>
           <h1 className="font-bold text-4xl">Muhammad Bilal Ismail</h1>
           <p>Software Engineer</p>
           <div className="flex flex-col gap-y-2 mt-3">

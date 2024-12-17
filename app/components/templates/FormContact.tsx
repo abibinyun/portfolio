@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-import { CircleLoader, ClipLoader, ClockLoader, DotLoader, FadeLoader, PulseLoader, RingLoader } from "react-spinners";
+import { PulseLoader } from "react-spinners";
 
 const FormContact = () => {
   const [from, setFrom] = useState<string>("");
@@ -10,7 +10,7 @@ const FormContact = () => {
   const [message, setMessage] = useState<string>("");
   const [isError, setIsError] = useState<boolean>(false);
   const [errMessage, setErrMessage] = useState<string>("");
-  const [captchaValue, setCaptchaValue] = useState<any>(null);
+  const [captchaValue, setCaptchaValue] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const recaptchaRef = useRef(null);
 
